@@ -11,7 +11,7 @@ general:
     - 'world'
   # Set the format of all economy related displays.
   # NOTE: This setting requires server reload / restart.
-  eco-format: '#,###.00'
+  eco-format: '$#,##0.00'
 
 
 # Database settings
@@ -57,10 +57,6 @@ hopper:
   only-owner: true
   # Item settings /Hopper get
   item:
-    # Cost of the item,
-    # if you're taking it from
-    # /Hopper get
-    cost: 1500.0
     # Allow buying more hoppers even if the player already reached the maximum amount of PLACED hoppers?
     # Command: /Hoppers get [amount]
     over-max: true
@@ -94,17 +90,9 @@ hopper:
 
   # Should only players with the uhoppers.upgrade permission be able to upgrade any hopper?
   upgrade-perm: false
+  # Should dropped items be directly inserted into a hopper, if it is within range and has space?
+  direct-suction: false
 
-  # This option requires server reload / restart.
-  recipe:
-    # Allow players to craft the hopper item?
-    enabled_4: false
-    # Each line represents a line in the crafting table.
-    # Each line must have three items.
-    recipe_list:
-      - 'IRON_INGOT,CHEST,IRON_INGOT'
-      - 'IRON_INGOT,REDSTONE,IRON_INGOT'
-      - 'AIR,IRON_INGOT,AIR'
 
 # Link / destination settings
 link:
