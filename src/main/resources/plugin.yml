@@ -3,23 +3,26 @@ main: me.angeschossen.upgradeablehoppers.UpgradeableHoppers
 version: ${project.version}
 author: Angeschossen
 api-version: 1.13
+softdepend: [ShopGUIPlus, Lands, Vault, SuperiorSkyblock2, BentoBox, WildStacker, WildChests, RoseStacker, AdvancedChests, PlotSquared, WorldGuard]
 
 
 commands:
   upgradeablehoppers:
     description: UpgradeableHoppers main command.
-    aliases: [hopper, hoppers, uh]
 
 permissions:
   uhoppers.*:
     description: Access to all UpgradeableHoppers actions
     default: op
     children:
-      uhoppers.hoppers.NUMBER:
+      uhoppers.hoppers.<number>:
         description: Give players permission to create specific amount of hoppers.
         default: op
-      uhoppers.links.NUMBER:
+      uhoppers.links.<number>:
         description: Give players permission to link specific amount of containers per hopper.
+        default: op
+      uhoppers.teleportation:
+        description: Allow teleportation to a hopper through /Hopper list
         default: op
       uhoppers.command.*:
         description: Access to all commands.
@@ -54,8 +57,11 @@ permissions:
           uhoppers.bypass.delete:
             description: Delete other players hoppers.
             default: op
-          uhoppers.bypass.vanilla:
-            description: Bypass vanilla hopper settings.
+          uhoppers.bypass.claim:
+            description: Allow linking in claims the player is not trusted in.
+            default: op
+          uhoppers.bypass.vanilla.*:
+            description: Bypass all vanilla hopper settings.
             default: op
             children:
               uhoppers.bypass.vanilla.craft:
@@ -64,3 +70,6 @@ permissions:
               uhoppers.bypass.vanilla.place:
                 description: Bypass vanilla hopper place setting.
                 default: op
+      uhoppers.upgrade:
+        description: Only allow players with this permission to upgrade any hopper, if config option upgrade-perm enabled.
+        default: op
