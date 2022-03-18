@@ -1,3 +1,11 @@
+# In this file you can configure hopper types and configure their levels.
+# The default types are "normal" and "chunk". The chunk type has the ability to
+# suck all items inside a radius of chunks. If you only want it to suck in the chunk the hopper is placed in,
+# then just remove all radius levels for this type, except the first level.
+#
+# NOTE: This file can't be reloaded by /hoppers reload.
+# Default file: https://github.com/Angeschossen/UpgradeableHoppers/blob/master/src/main/resources/hoppers.yml
+
 hoppers:
   normal:
     name: '&9&lUpgradeable Hopper'
@@ -10,6 +18,11 @@ hoppers:
     # Each line represents a line in the crafting table.
     # Each line must have three items. Each item must be seperated by a comma.
     recipe: []
+    # You can specify specific containers which should be linkable.
+    # If you don't configure a list of containers here, it will allow all containers.
+    # List of possible materials (please note that only containers are linkable): https://hub.spigotmc.org/javadocs/bukkit/org/bukkit/Material.html
+    linktypes: 'ALL'
+
     levels:
       # Transfer amount
       # How many items should be transferred at one transfer?
@@ -69,6 +82,7 @@ hoppers:
 
 
       # Maximum distance between a hopper and the link destination.
+      # You can use -1 for unlimited.
       link_distance:
         1:
           value: 100
@@ -94,6 +108,11 @@ hoppers:
     # Each line represents a line in the crafting table.
     # Each line must have three items. Each item must be seperated by a comma.
     recipe: []
+    # You can specify specific containers which should be linkable.
+    # If you don't configure a list of containers here, it will allow all containers.
+    # List of possible materials (please note that only containers are linkable): https://hub.spigotmc.org/javadocs/bukkit/org/bukkit/Material.html
+    linktypes: 'ALL'
+
     levels:
       # Transfer amount
       # How many items should be transferred at one transfer?
@@ -116,8 +135,6 @@ hoppers:
 
       # Suction radius How large should be the suction radius?
       # NOTE: If you want to disable upgradeable suction and enable vanilla hopper suction: Edit the default hopper settings in config.yml
-      # For example 2 x 2 x 2
-      # Three-dimensional
       suction_radius:
         1:
           value: 1
@@ -129,7 +146,7 @@ hoppers:
           value: 3
           cost: 15000.0
         4:
-          value: 35000
+          value: 4
           cost: 20000.0
 
 
@@ -152,6 +169,7 @@ hoppers:
 
 
       # Maximum distance between a hopper and the link destination.
+      # You can use -1 for unlimited.
       link_distance:
         1:
           value: 100
